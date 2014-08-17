@@ -87,6 +87,8 @@ if __name__ == '__main__':
   wrapper = ClientWrapper()
   controller = CoolController(UNIVERSE, UPDATE_INTERVAL, wrapper,
                                     LIGHTS*COLORS)
-  # Start the wrapper
-  wrapper.Run()
+  try:
+    wrapper.Run()
+  except KeyboardInterrupt:
+    wrapper.Stop
 
